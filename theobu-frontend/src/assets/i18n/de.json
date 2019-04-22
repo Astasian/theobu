@@ -1,6 +1,10 @@
 {
     "app": {
-        "description": "Tabu, nur slightly krasser",
-        "language": "Sprache"
+        "description": "Tabu, nur slightly krasser"    
+    },
+    "settings": { 
+        "language": "Sprache",
+        "title": "Einstellungen",
+        "ok": "Ok"
     }
 }
