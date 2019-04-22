@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from './services/language.service';
-import { Language } from './models/language';
+import { LanguageService } from '../../services/language.service';
+import { Language } from '../../models/language';
+import { MatDialog } from '@angular/material/dialog';
+import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +12,17 @@ import { Language } from './models/language';
 })
 export class AppComponent {
 
-  AVAILABLE_LANGUAGES = LanguageService.AVAILABLE_LANGUAGES;
-  selectedLanguage: Language;
-
-  constructor(translate: TranslateService, private languageService: LanguageService) {
+  constructor(translate: TranslateService, private languageService: LanguageService, public dialog: MatDialog) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
 
     this.languageService.selectedLanguage()
       .subscribe(l => {
-        this.selectedLanguage = l;
         translate.use(l.id);
       });
   }
 
-  setLanguage(id: string) {
-    this.languageService.setLanguage(id);
+  openSettings() {
+    this.dialog.open(SettingsDialogComponent);
   }
 }
