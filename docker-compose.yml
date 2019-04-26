@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  theobu:
+    image: theobu
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4300:80"
+    #restart: always

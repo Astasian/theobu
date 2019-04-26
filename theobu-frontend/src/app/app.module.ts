@@ -13,6 +13,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CardComponent } from './components/card/card.component';
 import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
+import { TitleScreenComponent } from './components/title-screen/title-screen.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     CardComponent,
-    SettingsDialogComponent
+    SettingsDialogComponent,
+    TitleScreenComponent
   ],
   imports: [
     BrowserModule,
