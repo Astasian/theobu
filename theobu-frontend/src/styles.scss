@@ -10,3 +10,9 @@ body { margin: 0; font-family: Roboto, "Roboto", sans-serif; }
 .marmelad > * {
     font-family: 'Marmelad', sans-serif;
 }
+
+.router-flex {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }

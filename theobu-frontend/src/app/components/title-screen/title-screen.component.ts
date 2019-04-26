@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-title-screen',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title-screen.component.scss']
 })
 export class TitleScreenComponent implements OnInit {
-
+  @HostBinding('class') flex = 'router-flex';
+  
   constructor() { }
 
   ngOnInit() {
