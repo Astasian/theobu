@@ -8,6 +8,7 @@ import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TitleScreenComponent } from './components/title-screen/title-screen.component';
+import { CardComponent } from './components/card/card.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -18,7 +19,8 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    TitleScreenComponent
+    TitleScreenComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,9 @@ export function createTranslateLoader(http: HttpClient) {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
-    }
+    },
+    defaultLanguage: 'de',
+    useDefaultLang: true
   })
   ],
   providers: [],

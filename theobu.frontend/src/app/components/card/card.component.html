@@ -1,0 +1,19 @@
+<mat-card class="card mat-card" *ngIf="card">
+    <mat-card-header class="mat-card-header">
+        <mat-card-title> {{ card.description}} </mat-card-title>
+        <mat-card-subtitle>{{card.id}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="mat-card-content">
+        <mat-progress-bar [value]="timerProgress"></mat-progress-bar>
+        <mat-list>
+            <mat-list-item *ngFor="let tabu of selectedTabus">
+                {{tabu}}
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions class="mat-card-footer">
+        <span class="flex-spacer"> </span>
+        <button mat-raised-button color="accent" (click)="clickNext()"> {{'controls.next' | translate}}</button>
+    </mat-card-actions>
+</mat-card>

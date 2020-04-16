@@ -1,6 +1,13 @@
 @import "../../../material.scss";
 
 .sample-class {
-    background-color: $accent;
+    background-color: lighten($primary, 20%);
     flex: auto;
+    display: flex;
+}
+
+tb-card {
+    display: flex;
+    flex: 1 0 auto;
+    margin: 5vh 5vw;
 }

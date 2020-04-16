@@ -1,0 +1,22 @@
+.card {
+    flex: auto;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-card-header {
+    flex-shrink: 0;
+}
+
+.mat-card-content {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.mat-card-footer {
+    margin: unset !important;
+    display: inline-flex;
+}

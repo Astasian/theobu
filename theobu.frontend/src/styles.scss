@@ -20,3 +20,7 @@ router-outlet + * {
     flex: 1 0 0px;
     overflow: hidden;
 }
+
+.flex-spacer {
+    flex-grow: 1;
+}

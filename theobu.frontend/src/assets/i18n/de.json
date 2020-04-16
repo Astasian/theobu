@@ -1,1 +1,8 @@
-{}
+{
+    "app": {
+        "title": "Theobu"
+    },
+    "controls": {
+        "next": "Nächstes Wort"
+    }
+}
