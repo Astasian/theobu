@@ -1,4 +1,4 @@
-FROM node:10.13-alpine AS build
+FROM node:13-alpine AS build
 WORKDIR /src
 COPY theobu-frontend/package*.json ./
 RUN npm install
