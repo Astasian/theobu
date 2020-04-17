@@ -18,7 +18,7 @@ jobs:
       run: |
         # Build the project
         npm install
-        npm run build --if-present
+        npm run build-github --if-present
       working-directory: './theobu.frontend/'
     - name: GitHub Branch Deploy
       uses: zekth/gh-deploy-action@1.0.0
