@@ -37,6 +37,6 @@ export class TitleScreenComponent implements OnInit {
     if(this.timer) {
       window.clearInterval(this.timer);
     }
-    this.timer = window.setInterval(_ => this.tp -= 1, 100);
+    this.timer = window.setInterval(_ => this.tp -= 1, 400);
   }
 }

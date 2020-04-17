@@ -4,11 +4,11 @@
         <mat-card-subtitle>{{card.id}}</mat-card-subtitle>
     </mat-card-header>
 
-    <mat-card-content class="mat-card-content">
+    <mat-card-content class="mat-card-content marmelad">
         <mat-progress-bar [value]="timerProgress"></mat-progress-bar>
         <mat-list>
-            <mat-list-item *ngFor="let tabu of selectedTabus">
-                {{tabu}}
+            <mat-list-item *ngFor="let tabu of selectedTabus" class="tabu-item">        
+                <p class="tabu-text">{{tabu}}</p>
             </mat-list-item>
         </mat-list>
     </mat-card-content>
