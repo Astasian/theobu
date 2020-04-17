@@ -1,9 +1,14 @@
-@import "../../../material.scss";
+tb-card {
+    display: flex;
+    flex: 1 0 auto;
+    margin: 5vh 5vw;
+}
 
 .sample-class {
-    background-color: lighten($primary, 15%);
     flex: auto;
     display: flex;
+    background-color: var(--color-primary);
+    filter: brightness(120%);
 }
 
 tb-card {
