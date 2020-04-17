@@ -1,3 +1,5 @@
+@import "../../../material.scss";
+
 .card {
     flex: auto;
 }
@@ -28,3 +30,15 @@
 .tabu-item {
     margin: 2em 0px;
 }
+
+.error {
+    border-color: $warn;
+    border-style: solid;
+    animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+    0% {background-color: lighten($warn, 20%);}
+    50% {background-color: $warn;}
+    100% {background-color: lighten($warn, 20%);}
+  }

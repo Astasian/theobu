@@ -19,12 +19,14 @@ export class TitleScreenComponent implements OnInit {
 
   allCards: ICard[];
 
+  timeout: boolean = false;
+
   ngOnInit(): void {
     this.contentfulService.getAllCards().then(l => {
       this.allCards = l;
       this.currentCard = l[this.currentIndex];
     });
-    
+
     this.resetTimer();
   }
 
@@ -34,9 +36,16 @@ export class TitleScreenComponent implements OnInit {
   }
 
   resetTimer() {
-    if(this.timer) {
+    if (this.timer) {
       window.clearInterval(this.timer);
     }
-    this.timer = window.setInterval(_ => this.tp -= 1, 400);
+    this.timer = window.setInterval(_ => {
+      this.tp -= 1;
+
+      if(this.tp === 0) {
+        this.timeout = true;
+        window.clearInterval(this.timer);
+      }
+    }, 400);
   }
 }

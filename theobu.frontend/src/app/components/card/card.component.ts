@@ -27,6 +27,8 @@ export class CardComponent {
   @Input()
   timerProgress: number
 
+  @Input()
+  hasError: boolean = false;
 
   @Output()
   next = new EventEmitter<any>();

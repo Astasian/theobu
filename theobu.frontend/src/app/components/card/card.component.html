@@ -1,4 +1,4 @@
-<mat-card class="card mat-card" *ngIf="card">
+<mat-card class="card mat-card" *ngIf="card" [ngClass]="{'error': hasError}">
     <mat-card-header class="mat-card-header">
         <mat-card-title> {{ card.description}} </mat-card-title>
         <mat-card-subtitle>{{card.id}}</mat-card-subtitle>
