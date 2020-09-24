@@ -9,7 +9,7 @@ using tb.actor.grainsInterfaces;
 
 namespace tb.web.api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/v1/[controller]/[action]")]
     [ApiController]
     public class DebugController : ControllerBase
     {

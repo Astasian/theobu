@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tb.actor.silo", "tb.actor.s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tb.web.api", "tb.web.api\tb.web.api.csproj", "{BCB0C141-E588-476B-B776-ED67F0290DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tb.datalayer", "tb.datalayer\tb.datalayer.csproj", "{0454B17F-D2D6-4BE6-9992-C2590089890A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tb.datalayer", "tb.datalayer\tb.datalayer.csproj", "{0454B17F-D2D6-4BE6-9992-C2590089890A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

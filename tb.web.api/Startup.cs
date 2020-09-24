@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Orleans;
 using Orleans.Clustering.Kubernetes;
 using Orleans.Configuration;
@@ -35,16 +36,22 @@ namespace tb.web.api
         {
 
             services.AddDbContext<DatabaseContext>(options =>
-                            options.UseNpgsql(Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("tb.web.api")));
+                            options
+                            .UseLazyLoadingProxies()
+                            .UseNpgsql(
+                                Configuration.GetConnectionString("Default"),
+                                b => b.MigrationsAssembly("tb.web.api")));
 
             services.AddSingleton(ConfigureClusterClient);
             services.AddHostedService<ClusterClientService>();
+            services.AddScoped<ICardDatalayer, CardDatalayer>();
 
             if (_hostEnvironment.IsDevelopment())
             {
                 services.AddSwaggerDocument();
             }
-            services.AddControllers();
+
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         private IClusterClient ConfigureClusterClient(IServiceProvider sp)

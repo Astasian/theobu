@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -15,7 +16,8 @@ namespace tb.datalayer.Models
         [Required]
         public List<string> Tabus { get; set; }
 
-        public Language Language { get; set; }
+        [JsonIgnore]
+        public virtual Language Language { get; set; }
 
         [Required]
         public int LanguageId { get; set; }

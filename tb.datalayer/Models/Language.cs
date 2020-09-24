@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace tb.datalayer.Models
 {
@@ -7,6 +8,8 @@ namespace tb.datalayer.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string LanguageCode { get; set; }
-        public List<Card> Cards { get; set; }
+
+        [JsonIgnore]
+        public virtual List<Card> Cards { get; set; }
     }
 }
